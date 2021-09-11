@@ -66,7 +66,7 @@ void main() {
 
         body: Center(
           child: Icon(
-            Icons.photo,
+            Icons.photo_album,
             color: Colors.red,
             size: 80,
           ),
