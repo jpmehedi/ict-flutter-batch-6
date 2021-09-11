@@ -6,8 +6,12 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Demo App",
+      theme: ThemeData(
+        fontFamily: "Lobster"
+      ),
       home: Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.yellow,
           centerTitle: true,
           title: Text(
             "i'm poor".toUpperCase(),
@@ -18,8 +22,8 @@ void main() {
               fontSize: 28,
               fontWeight: FontWeight.bold,
               // fontWeight: FontWeight.w700,
-              fontStyle: FontStyle.italic,
-              fontFamily: "arial"
+              // fontStyle: FontStyle.italic,
+              fontFamily: "Righteous"
             ), 
           ),
         ),
@@ -27,8 +31,8 @@ void main() {
         // body: Center(
         //   child: Image.asset(
         //     "assets/poor_man.png",
-        //     width: 200,
-        //     height: 200,
+            // width: 200,
+            // height: 200,
         //   ),
         // ),
 
@@ -50,14 +54,25 @@ void main() {
         //   ),
         // ),
 
+        // body: Center(
+        //   child: CircleAvatar(
+        //     radius: 50,
+        //     backgroundImage: AssetImage(
+        //       "assets/poor_man.png",
+        //     ),
+        //   ),
+        // ),
+
+
         body: Center(
-          child: CircleAvatar(
-            radius: 50,
-            backgroundImage: AssetImage(
-              "assets/poor_man.png",
-            ),
+          child: Icon(
+            Icons.photo,
+            color: Colors.red,
+            size: 80,
           ),
-        ),
+        )
+
+
       ),
     ),
   );
