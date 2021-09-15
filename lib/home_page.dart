@@ -18,13 +18,67 @@ class HomePage extends StatelessWidget {
             ), 
           ),
         ),
-        body: Center(
-          child: Icon(
-            Icons.photo_album,
-            color: Colors.red,
-            size: 80,
+        body: Container(
+          // color: Colors.black,
+          // height: double.infinity,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            // crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                color: Colors.red,
+                child: FlutterLogo(
+                  size: 100,
+                ),
+              ),
+              Container(
+                // height: double.infinity,
+                color: Colors.orange,
+                child: FlutterLogo(
+                  size: 100,
+                ),
+              ),
+              Container(
+                color: Colors.purple,
+                child: FlutterLogo(
+                  size: 100,
+                ),
+              )
+            ],
           ),
         )
       );
   }
 }
+
+
+
+// Container(
+//           color: Colors.pink,
+//           width: 400,
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.spaceAround,
+//             crossAxisAlignment: CrossAxisAlignment.center,
+//             children: [
+//               Container(
+//                 color: Colors.red,
+//                 child: FlutterLogo(
+//                   size: 100,
+//                 ),
+//               ),
+//               Container(
+                // width: double.infinity,
+//                 color: Colors.orange,
+//                 child: FlutterLogo(
+//                   size: 100,
+//                 ),
+//               ),
+//               Container(
+//                 color: Colors.purple,
+//                 child: FlutterLogo(
+//                   size: 100,
+//                 ),
+//               )
+//             ],
+//           ),
+//         )
