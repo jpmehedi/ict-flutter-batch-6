@@ -1,5 +1,5 @@
 
-import 'package:demo_project/home_page.dart';
+import 'package:demo_project/profile.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -7,10 +7,11 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Demo App",
-      theme: ThemeData(
-        fontFamily: "Lobster"
-      ),
-      home: HomePage()
+      // theme: ThemeData(
+      //   fontFamily: "Lobster"
+      // ),
+      // home: HomePage()
+      home: ProfileScreen(),
     ),
   );
 }
