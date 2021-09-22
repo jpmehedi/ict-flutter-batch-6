@@ -7,21 +7,22 @@ class DayTen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(title: Text("ListView & ListTile"),),
-      body: ListView.builder(
-        itemCount: 50,
-        itemBuilder: (BuildContext context, int index ){
+
+
+      body:ListView.builder(
+        itemCount: 5,
+        itemBuilder: (BuildContext context, int index){
           return ListTile(
             onTap: (){},
             leading: CircleAvatar(
-              radius: 24,
               child: Icon(Icons.phone),
             ),
-            title: Text("+01472822852"),
-            subtitle: Text("Flutter Devloper"),
+            title: Text("+018214245215"),
+            subtitle: Text("Flutter Developer"),
             trailing: Icon(Icons.arrow_forward_ios),
           );
-        },
-      )
+        }
+      ),
     );
   }
 }
