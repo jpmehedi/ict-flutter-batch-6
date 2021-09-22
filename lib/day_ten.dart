@@ -9,7 +9,14 @@ class DayTen extends StatelessWidget {
       appBar: AppBar(title: Text("ListView & ListTile"),),
 
 
-      body:ListView.builder(
+      body:ListView.separated(
+        separatorBuilder: (BuildContext context, int index){
+          return Divider(
+            thickness: 1,
+            color: Colors.red,
+            height: 0,
+          );
+        },
         itemCount: 5,
         itemBuilder: (BuildContext context, int index){
           return ListTile(
