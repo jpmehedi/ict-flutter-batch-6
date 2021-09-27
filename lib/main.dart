@@ -1,5 +1,5 @@
 
-import 'package:demo_project/day_ten.dart';
+import 'package:demo_project/screen_one.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ void main() {
       // ),
       // home: HomePage()
       // home: ProfileScreen(),
-      home: DayTen(),
+      home: ScreenOne()
     ),
   );
 }
