@@ -14,7 +14,7 @@ class DayTen extends StatelessWidget {
               children: [
                 Image.asset("assets/background.jpg"),
                 Positioned(
-                  top: 20,
+                  top: 20,  
                   left: 20,
                   child: CircleAvatar(
                     radius: 28,
@@ -53,6 +53,12 @@ class DayTen extends StatelessWidget {
               leading: Icon(Icons.music_note),
               title: Text("Music"),
             ),
+            Container(
+              width: double.infinity,
+              height: 1,
+              color: Colors.red
+            ),
+        
             ListTile(
               onTap: (){},
               leading: Icon(Icons.music_note),
@@ -71,27 +77,18 @@ class DayTen extends StatelessWidget {
           ],
         ),
       ),
-      body:ListView.separated(
-        separatorBuilder: (BuildContext context, int index){
-          return Divider(
-            thickness: 1,
-            color: Colors.red,
-            height: 0,
-          );
-        },
+      body:ListView.builder(
         itemCount: 5,
-        itemBuilder: (BuildContext context, int index){
+        itemBuilder: (BuildContext context,int index){
           return ListTile(
-            onTap: (){},
-            leading: CircleAvatar(
-              child: Icon(Icons.phone),
-            ),
-            title: Text("+018214245215"),
-            subtitle: Text("Flutter Developer"),
-            trailing: Icon(Icons.arrow_forward_ios),
-          );
+            leading: Icon(Icons.list),
+            trailing: Text("GFG",
+                           style: TextStyle(
+                             color: Colors.green,fontSize: 15),),
+            title:Text("List item $index")
+            );
         }
-      ),
+        ),
     );
   }
 }
