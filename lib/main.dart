@@ -7,9 +7,9 @@ void main() {
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: "Demo App",
-      // theme: ThemeData(
-      //   fontFamily: "Lobster"
-      // ),
+      theme: ThemeData(
+        fontFamily: "Lobster"
+      ),
       // home: HomePage()
       // home: ProfileScreen(),
       home: HomeScreen()
