@@ -1,5 +1,5 @@
 
-import 'package:demo_project/button_screen.dart';
+import 'package:demo_project/home_screen.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ void main() {
       // ),
       // home: HomePage()
       // home: ProfileScreen(),
-      home: ButtonScreen()
+      home: HomeScreen()
     ),
   );
 }
