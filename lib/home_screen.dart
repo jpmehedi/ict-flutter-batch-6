@@ -68,7 +68,7 @@ class _HomeScreenState extends State<HomeScreen> {
           unselectedFontSize: 20,
           iconSize: 40,
           elevation: 20,
-          // backgroundColor: Colors.black,
+          backgroundColor: Colors.black,
           onTap: (int index){
             setState(() {
               selectedIndex = index;
