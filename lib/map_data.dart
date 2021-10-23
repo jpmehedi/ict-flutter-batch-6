@@ -4,7 +4,7 @@ void main() {
   
 //   Map<String, dynamic> student = <String, dynamic>{
     
-//     //Key : value
+    //Key : value
 //     "id": 01,
 //     "name": "Mehedi",
 //     "age": 24,
@@ -48,6 +48,24 @@ void main() {
   
   
   print(student[2]["age"]["old"][0]);
+
+
+  for(int i = 0; i < student.length; i++) {
+    if(student[i]["age"] is Map) {
+      Map age = student[i]["age"];
+      age.forEach((key, value) {
+       
+        if(value is List) {
+          for(int j = 0; j < value.length; j++) {
+            print(value[j]);
+          }
+        }
+        print(value);
+      });
+      continue;
+    }
+    print(student[i]['age']);
+  }
   
   
   
