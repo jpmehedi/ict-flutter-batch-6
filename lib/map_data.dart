@@ -59,8 +59,9 @@ void main() {
           for(int j = 0; j < value.length; j++) {
             print(value[j]);
           }
+        }else{
+          print(value);
         }
-        print(value);
       });
       continue;
     }
