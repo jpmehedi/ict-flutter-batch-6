@@ -1,4 +1,4 @@
-abstract class Father{
+ mixin Father{
 
   String _name = "Mehedi";
 
@@ -8,7 +8,7 @@ abstract class Father{
    addTwo() {
     int a = 10;
     int b = 230;
-    return a + b;
+    print(a + b);
   }
 
   void diaplay(){

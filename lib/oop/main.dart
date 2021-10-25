@@ -1,7 +1,6 @@
 
 
 import 'package:demo_project/oop/son.dart';
-import 'package:demo_project/oop/son_two.dart';
 
 void main () {
 
@@ -17,15 +16,86 @@ void main () {
 
   Son son = Son();
 
-  SonTwo sonTwo = SonTwo();
+  // SonTwo sonTwo = SonTwo();
 
   // print(son.addTwo());
   // print(son.multiply());
   // son.addTwo();
-
-  print(son.name);
+  
   son.diaplay();
+  son.multiply();
+  son.addTwo();
   // sonTwo.diaplay();
+
+
+
+
+  //  String name = "Mehedi";
+ 
+//  name = "Hasan";
+  
+
+//  const DateTime dateTime = DateTime.now();
+  
+//   print(dateTime);
+  
+  
+//   final String name = "Mehedi";
+  
+//   name = "Hasan";
+  
+  
+  
+//   const String name = "Mehedi";
+  
+//   name = "Hasan"
+  
+//    print(name);
+
+
+
+
+  // try{
+      
+  //   int a = 20;
+  //   int b = 0;
+
+  //   print(a ~/ b);
+    
+  // } catch(err) {
+    
+  //   print(err);
+    
+  // } finally{
+   
+  //   print("Must be executed");
+    
+  // }
+  
    
 }
+
+
+
+// void main() {
+
+//   print("Before async");
+//   getData();
+//   print("After async");
+
+  
+  
+  
+// }
+
+
+// Future getData()async {
+  
+//   await Future.delayed(Duration(seconds: 5));
+  
+//   print("Executed");
+  
+}
+
+
 
