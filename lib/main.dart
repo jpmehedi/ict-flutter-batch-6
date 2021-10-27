@@ -1,5 +1,5 @@
 
-import 'package:demo_project/inputfield_screen.dart';
+import 'package:demo_project/counter_app.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +12,7 @@ void main() {
       // ),
       // home: HomePage()
       // home: ProfileScreen(),
-      home: InputFieldScreen()
+      home: CounterApp()
     ),
   );
 }
