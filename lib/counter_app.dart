@@ -32,7 +32,36 @@ class CounterApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("CounterApp"),),
+      appBar: AppBar(
+        title: Text("CounterApp"),
+        actions: [
+          PopupMenuButton(
+            icon: Icon(Icons.more_horiz),
+            offset: Offset(
+              10, 40
+            ),
+            onSelected: (value){
+              if(value == 1) {
+                print("Go to play store");
+              }else if(value == 2) {
+                print("Naviagte profile screen");
+              }
+            },
+            itemBuilder: (context){
+              return [
+                PopupMenuItem(
+                  child: Text("Item 1"),
+                  value: 1,
+                ),
+                PopupMenuItem(
+                  child: Text("Item 2"),
+                  value: 2,
+                )
+              ];
+            },
+          )
+        ],
+      ),
       body: null,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
 
