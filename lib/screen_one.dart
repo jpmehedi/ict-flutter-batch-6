@@ -2,6 +2,7 @@ import 'package:demo_project/screen_two.dart';
 import 'package:flutter/material.dart';
 
 class ScreenOne extends StatelessWidget {
+  static const  String path = "ScreenOne";
   const ScreenOne({ Key? key }) : super(key: key);
 
   @override
@@ -17,15 +18,7 @@ class ScreenOne extends StatelessWidget {
             backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
           ),
           onPressed: (){
-             // Route route = MaterialPageRoute(builder: (context)=> ScreenTwo());
-            // Navigator.push(context, route);
-
-            Navigator.push(context, MaterialPageRoute(builder: (context)=> ScreenTwo()));
-
-            // Navigator.push(context, MaterialPageRoute(builder: (context){
-            //   return ScreenTwo();
-            // }));
-
+            Navigator.pushNamed(context, ScreenTwo.path);
           }, 
           child: Text("Screen One")
         ),
