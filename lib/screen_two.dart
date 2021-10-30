@@ -26,7 +26,10 @@ class ScreenTwo extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // Text("Name: ${data[0]} Age: ${data[1]}"),
+            for(int i = 0; i < data.length; i++)
             Text("Name: ${data["name"]} Age: ${data["age"]}"),
+
+            
             ElevatedButton(
               onPressed: (){
                 Navigator.pushNamed(context, ScreenThree.path);
