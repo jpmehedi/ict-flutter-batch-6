@@ -1,6 +1,8 @@
+import 'package:demo_project/screen_one.dart';
 import 'package:flutter/material.dart';
 
 class ScreenThree extends StatelessWidget {
+  static const  String path = "ScreenThree";
   const ScreenThree({ Key? key }) : super(key: key);
 
   @override
@@ -19,7 +21,8 @@ class ScreenThree extends StatelessWidget {
       body: Center(
         child: ElevatedButton(
           onPressed: (){
-            Navigator.pop(context);
+            // Navigator.pop(context);
+            Navigator.pushNamedAndRemoveUntil(context, ScreenOne.path, (route) => false);
           }, 
           child: Text("Back")
         ),
