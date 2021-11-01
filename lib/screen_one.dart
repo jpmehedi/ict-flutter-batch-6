@@ -29,19 +29,33 @@ class ScreenOne extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-      
         title: Text("Screen One"),
       ),
-      body: Center(
-        child: ElevatedButton(
-          style: ButtonStyle(
-            backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+      body: Column(
+        children: [
+          Text(
+            "The quick brown fox jumps over the lazy dog",
+            style: Theme.of(context).textTheme.bodyText1
           ),
-          onPressed: (){
-            // Navigator.pushNamed(context, ScreenTwo.path, arguments: [name, age]);
-            // Navigator.pushNamed(context, ScreenTwo.path, arguments: {"name": name, "age": age});
-          }, 
-          child: Text("Screen One")
+          Center(
+            child: ElevatedButton(
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
+              ),
+              onPressed: (){
+                // Navigator.pushNamed(context, ScreenTwo.path, arguments: [name, age]);
+                // Navigator.pushNamed(context, ScreenTwo.path, arguments: {"name": name, "age": age});
+              }, 
+              child: Text("Screen One")
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){},
+        child: Icon(
+          Icons.add,
+          color: Theme.of(context).iconTheme.color,
         ),
       ),
     );
