@@ -1,4 +1,5 @@
 
+import 'package:demo_project/responsive_screen.dart';
 import 'package:demo_project/screen_one.dart';
 import 'package:demo_project/screen_three.dart';
 import 'package:demo_project/screen_two.dart';
@@ -25,6 +26,7 @@ void main() {
           color: Colors.purple
         )
       ),
+
       darkTheme: ThemeData(
         primaryColor: Colors.black,
         brightness: Brightness.dark,
@@ -41,9 +43,12 @@ void main() {
           color: Colors.white
         )
       ),
-      themeMode: ThemeMode.dark,
-      initialRoute: ScreenOne.path,
+
+      themeMode: ThemeMode.light,
+      initialRoute: ResponsiveScreen.path,
       routes: {
+        
+        ResponsiveScreen.path : (ctx)=> ResponsiveScreen(),
         ScreenOne.path : (ctx)=> ScreenOne(),
         ScreenTwo.path : (ctx)=> ScreenTwo(),
         ScreenThree.path : (ctx)=> ScreenThree(),
