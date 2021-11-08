@@ -4,8 +4,13 @@ import 'package:demo_project/screen_one.dart';
 import 'package:demo_project/screen_three.dart';
 import 'package:demo_project/screen_two.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
+  // WidgetsFlutterBinding.ensureInitialized();
+  // SystemChrome.setPreferredOrientations([
+  //   DeviceOrientation.landscapeRight
+  // ]);
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
@@ -45,7 +50,7 @@ void main() {
       ),
 
       themeMode: ThemeMode.light,
-      initialRoute: ResponsiveScreen.path,
+      initialRoute: ScreenOne.path,
       routes: {
         
         ResponsiveScreen.path : (ctx)=> ResponsiveScreen(),
