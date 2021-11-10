@@ -1,4 +1,5 @@
 
+import 'package:demo_project/post_screen.dart';
 import 'package:demo_project/responsive_screen.dart';
 import 'package:demo_project/screen_one.dart';
 import 'package:demo_project/screen_three.dart';
@@ -18,7 +19,7 @@ void main() {
       theme: ThemeData(
         primaryColor: Colors.orange,
         brightness: Brightness.light,
-        fontFamily: "Lobster",
+        // fontFamily: "Lobster",
         textTheme: TextTheme(
           headline1: TextStyle(color: Colors.red, fontSize: 28),
           headline6: TextStyle(color: Colors.green, fontSize: 12),
@@ -50,9 +51,9 @@ void main() {
       ),
 
       themeMode: ThemeMode.light,
-      initialRoute: ScreenOne.path,
+      initialRoute: PostScreen.path,
       routes: {
-        
+        PostScreen.path : (ctx)=> PostScreen(),
         ResponsiveScreen.path : (ctx)=> ResponsiveScreen(),
         ScreenOne.path : (ctx)=> ScreenOne(),
         ScreenTwo.path : (ctx)=> ScreenTwo(),
