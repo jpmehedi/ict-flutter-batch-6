@@ -26,7 +26,6 @@ class ScreenOne extends StatelessWidget {
 
   String url = "https://flutter.dev/";
 
-
   Future launchUrl () async{
     if(await canLaunch(url)) {
       return launch(url);
@@ -53,8 +52,6 @@ class ScreenOne extends StatelessWidget {
     }
   }
 
-
-
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
@@ -75,7 +72,7 @@ class ScreenOne extends StatelessWidget {
               onPressed: (){
                 // launchUrl();
                 // launchEmail();
-                  launchPhone();
+                launchPhone();
               }, 
               child: Text("Launch Phone")
             ),
