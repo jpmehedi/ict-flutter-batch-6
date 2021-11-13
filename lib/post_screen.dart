@@ -13,10 +13,10 @@ class PostScreen extends StatefulWidget {
 class _PostScreenState extends State<PostScreen> {
 
   final String url = "https://jsonplaceholder.typicode.com/posts";
+  
   List posts = [];
   Future getPosts()async{
    final response = await http.get(Uri.parse(url));
-
    if(response.statusCode == 200) {
      setState(() {
       posts = jsonDecode(response.body);
