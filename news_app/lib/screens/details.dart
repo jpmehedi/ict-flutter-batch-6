@@ -42,12 +42,24 @@ String getImage(image){
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(newsData['title']),
-            Image.network(getImage(newsData['urlToImage'])),
+            Hero(
+              tag: "${newsData['title']}",
+              child: Image.network(
+                getImage(newsData['urlToImage']),
+                height: 200,
+                width: double.infinity,
+                fit: BoxFit.cover,
+              )
+            ),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text("Author: ${getAuthor(newsData["author"])}"),
-                Text("Published Date:${newsData["publishedAt"]} ")
+                Expanded(
+                  child: Text("Author: ${getAuthor(newsData["author"])}")
+                ),
+                Expanded(
+                  child: Text("Published Date:${newsData["publishedAt"]} ")
+                )
               ],
             ),
             Text(newsData["description"])

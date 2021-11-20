@@ -11,7 +11,7 @@ class AllScreen extends StatefulWidget {
 }
 
 class _AllScreenState extends State<AllScreen> {
-  final String url = 'https://newsapi.org/v2/everything?q=tesla&from=2021-10-15&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6';
+  final String url = 'https://newsapi.org/v2/everything?q=tesla&from=2021-10-20&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6';
   List allNewsData = [];
   Future getAllNews()async{
    final response = await http.get(Uri.parse(url));
@@ -68,11 +68,14 @@ class _AllScreenState extends State<AllScreen> {
                   Text(allNewsData[index]['publishedAt']),
                 ],
               ),
-              trailing: Image.network(
-                getImage(allNewsData[index]["urlToImage"]),
-                width: 100,
-                height: 100,
-                fit: BoxFit.cover,
+              trailing: Hero(
+                tag: "${allNewsData[index]["title"]}",
+                child: Image.network(
+                  getImage(allNewsData[index]["urlToImage"]),
+                  width: 100,
+                  height: 100,
+                  fit: BoxFit.cover,
+                ),
               ),
             ),
           );
