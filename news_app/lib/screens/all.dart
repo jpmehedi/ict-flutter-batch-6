@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:intl/intl.dart';
 import 'package:news_app/screens/details.dart';
 class AllScreen extends StatefulWidget {
   const AllScreen({ Key? key }) : super(key: key);
@@ -11,10 +12,15 @@ class AllScreen extends StatefulWidget {
 }
 
 class _AllScreenState extends State<AllScreen> {
-  final String url = 'https://newsapi.org/v2/everything?q=tesla&from=2021-10-20&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6';
+  DateTime currentDate = DateTime.now();
+  String getCurrentDate(){
+     String formattedDate = DateFormat('yyyy-MM-dd').format(currentDate);
+     return formattedDate;
+  }
+  // final String url = 'https://newsapi.org/v2/everything?q=tesla&from=$date&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6';
   List allNewsData = [];
   Future getAllNews()async{
-   final response = await http.get(Uri.parse(url));
+   final response = await http.get(Uri.parse("https://newsapi.org/v2/everything?q=tesla&from=${getCurrentDate()}&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6"));
    Map _allNews = {};
    if(response.statusCode == 200){
      setState(() {
@@ -59,7 +65,7 @@ class _AllScreenState extends State<AllScreen> {
               onTap: (){
                 Navigator.pushNamed(context, DetailsScreen.path, arguments: allNewsData[index]);
               },
-              title: Text(allNewsData[index]["title"]),
+              title: Text(getCurrentDate()),
               isThreeLine: true,
               subtitle: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
