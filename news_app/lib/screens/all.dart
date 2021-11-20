@@ -17,7 +17,8 @@ class _AllScreenState extends State<AllScreen> {
      String formattedDate = DateFormat('yyyy-MM-dd').format(currentDate);
      return formattedDate;
   }
-  // final String url = 'https://newsapi.org/v2/everything?q=tesla&from=$date&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6';
+
+  
   List allNewsData = [];
   Future getAllNews()async{
    final response = await http.get(Uri.parse("https://newsapi.org/v2/everything?q=tesla&from=${getCurrentDate()}&sortBy=publishedAt&apiKey=4159422918ad47e1bca6d72a504c5da6"));
