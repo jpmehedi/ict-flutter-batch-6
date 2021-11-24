@@ -3,20 +3,20 @@ import 'package:bdfoodrecipe/global/functions.dart';
 import 'package:bdfoodrecipe/widget/custom_grid_tile.dart';
 import 'package:flutter/material.dart';
 
-class BreadScreen extends StatelessWidget {
-  
-  final List bread = bdfood["bread"];
+class FastFood extends StatelessWidget {
+   final List fastFood = bdfood["fast_food"];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
-      gridDelegate: customGridDelegate(),
-      padding: EdgeInsets.all(10),
-      itemCount: bread.length,
+      gridDelegate: customGridDelegate(), 
+      itemCount: fastFood.length,
+      padding: EdgeInsets.all(15),
       itemBuilder: (BuildContext context, int index){
         return CustomGridTile(
-          imageUrl: bread[index]["image"],
-          title: bread[index]["title"],
+          imageUrl: fastFood[index]["image"],
+          title: fastFood[index]["title"],
+          totalIngredients: countIngredients(fastFood[index]["ingredients"]),
         );
       }
     );
