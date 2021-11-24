@@ -1,12 +1,12 @@
 import 'package:bdfoodrecipe/screens/bread/bread.dart';
-import 'package:bdfoodrecipe/screens/desert/desert.dart';
+import 'package:bdfoodrecipe/screens/dessert/dessert.dart';
 import 'package:bdfoodrecipe/screens/fast_food/fast_food.dart';
 import 'package:bdfoodrecipe/screens/non_veg/non_veg.dart';
 import 'package:bdfoodrecipe/screens/rice/rice.dart';
 import 'package:flutter/material.dart';
 
 class HomeScreen extends StatelessWidget {
-  static const String path = "HomeScreen";
+  static String path = "HomeScreen";
   const HomeScreen({ Key? key }) : super(key: key);
 
   @override
@@ -15,9 +15,9 @@ class HomeScreen extends StatelessWidget {
       length: 5,
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.orange,
-          centerTitle: true,
+          backgroundColor: Colors.red,
           title: Text("BD FOOD RECIPE"),
+          centerTitle: true,
           actions: [
             IconButton(
               onPressed: (){}, 
@@ -28,32 +28,39 @@ class HomeScreen extends StatelessWidget {
         drawer: Drawer(),
         body: Column(
           children: [
+            SizedBox(height: 10,),
             TabBar(
-              unselectedLabelColor: Colors.redAccent,
+                isScrollable: true,
+                unselectedLabelColor: Colors.redAccent,
                 indicatorSize: TabBarIndicatorSize.tab,
                 indicator: BoxDecoration(
                     gradient: LinearGradient(
-                        colors: [Colors.redAccent, Colors.orangeAccent]),
-                    borderRadius: BorderRadius.circular(50),
-                    color: Colors.redAccent
+                        colors: [
+                          Colors.redAccent, 
+                          Colors.orangeAccent
+                        ]
+                 ),
+                borderRadius: BorderRadius.circular(8),
+                color: Colors.redAccent
               ),
               tabs: [
                 Tab(
                   child: Text("Rice"),
                 ),
                 Tab(
-                  child: Text("Bread"),
-                ),
+                    child: Text("Bread"),
+                  ),
                 Tab(
-                  child: Text("Desert"),
-                ),
+                    child: Text("Desert"),
+                  ),
+    
                 Tab(
-                  child: Text("Fast Food"),
-                ),
+                    child: Text("Fast-Food"),
+                  ),
                 Tab(
-                  child: Text("Non-Veg"),
-                ),
-              ]
+                    child: Text("Non-Veg"),
+                  ),
+              ],
             ),
 
             Expanded(
@@ -61,7 +68,7 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   RiceScreen(),
                   BreadScreen(),
-                  DesertScreen(),
+                  DessertScreen(),
                   FastFoodScreen(),
                   NonVegScreen()
                 ]

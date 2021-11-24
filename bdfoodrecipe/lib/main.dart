@@ -16,8 +16,9 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: HomeScreen.path,
       routes: {
-        HomeScreen.path: (ctx)=> HomeScreen()
+        HomeScreen.path: (ctx)=> HomeScreen(),
       },
     );
   }
 }
+
