@@ -1,5 +1,6 @@
 import 'package:bdfoodrecipe/screens/details/details.dart';
 import 'package:bdfoodrecipe/screens/home/home.dart';
+import 'package:bdfoodrecipe/screens/video/video.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.path,
       routes: {
         HomeScreen.path: (ctx)=> HomeScreen(),
-        DetailScreen.path: (ctx)=> DetailScreen()
+        DetailScreen.path: (ctx)=> DetailScreen(),
+        VideoScreen.path: (ctx)=> VideoScreen()
       },
     );
   }
