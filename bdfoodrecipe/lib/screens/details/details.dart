@@ -1,9 +1,24 @@
+import 'package:bdfoodrecipe/screens/video/video.dart';
 import 'package:bdfoodrecipe/widget/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:share/share.dart';
 
 class DetailScreen extends StatelessWidget {
   static const String path = "DetailScreen";
   const DetailScreen({ Key? key }) : super(key: key);
+
+  shareData(data){
+    String shareInfo = '''
+    
+    ${data["title"]}
+
+    ${data["ingredients"].toString()}
+    
+    ${data["directions"].toString()}
+    
+    ''';
+     Share.share('$shareInfo', subject: 'Look what I made!');
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +29,9 @@ class DetailScreen extends StatelessWidget {
         title: Text("Details"),
         actions: [
           IconButton(
-            onPressed: (){}, 
+            onPressed: (){
+              shareData(data);
+            }, 
             icon: Icon(Icons.share)
           )
         ],
@@ -29,6 +46,7 @@ class DetailScreen extends StatelessWidget {
                 bottom: 0,
                 child: Container(
                   height: 48,
+                  padding: EdgeInsets.all(5),
                   width: MediaQuery.of(context).size.width,
                   color: Colors.black.withOpacity(0.25),
                   child: Text(
@@ -55,13 +73,15 @@ class DetailScreen extends StatelessWidget {
                color: Colors.orange,
                onTap: (){},
                lebel: "Favorite",
-               icon: Icons.check,
+               icon: Icons.favorite,
              ),
              CustomButton(
                color: Colors.pink,
-               onTap: (){},
+               onTap: (){
+                 Navigator.pushNamed(context, VideoScreen.path, arguments: data);               
+               },
                lebel: "Videos",
-               icon: Icons.check,
+               icon: Icons.videocam_rounded
              )
             ],
           ),
