@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "764474227410",
+    "project_id": "test-me-three",
+    "storage_bucket": "test-me-three.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764474227410:android:bd75a7fdf6bec8bc86cb0b",
+        "android_client_info": {
+          "package_name": "com.tech4webs.test_me"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764474227410-lt3a7jviuma887bi2t43mle5vg2814v1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMheCBgDcnyyfuB4f5HkXtTDBpsa_zL44"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "764474227410-lt3a7jviuma887bi2t43mle5vg2814v1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

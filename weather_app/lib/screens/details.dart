@@ -95,6 +95,7 @@ class DetailsScreen extends StatelessWidget {
                       "23°",
                       style: TextStyle(
                         color: Colors.white,
+                        
                         fontSize: 72,
                         fontWeight: FontWeight.bold
                       ),
@@ -112,7 +113,7 @@ class DetailsScreen extends StatelessWidget {
               ],
             ),
            ),
-           
+
           ],
         ),
       ),
