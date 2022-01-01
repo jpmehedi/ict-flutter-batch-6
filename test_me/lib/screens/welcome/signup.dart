@@ -1,6 +1,8 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:test_me/screens/home.dart';
@@ -21,6 +23,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   TextEditingController _emailEditingController = TextEditingController();
   TextEditingController _passwordEditingController = TextEditingController();
+    TextEditingController _nameEditingController = TextEditingController();
+  TextEditingController _mobileEditingController = TextEditingController();
   bool isLoading = false;
 
  Future singUp()async{
@@ -33,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
       password: _passwordEditingController.text
     );
     if(userCredential.user != null){
-      print("ass");
+      createUser();
       Route route = MaterialPageRoute(builder: (ctx)=> HomeScreen());
       Navigator.push(context, route);
     }
@@ -54,9 +58,52 @@ class _SignUpScreenState extends State<SignUpScreen> {
     if(image != null){
       setState(() {
         imagePath = File(image.path);
+        print("Image: $imagePath");
+        uploadProfileImage();
       });
     }
   }
+
+  var imageUrl;
+
+  Future uploadProfileImage() async {
+    String image = imagePath.toString();
+    var _image = image.split("/")[6];
+    Reference reference = FirebaseStorage.instance.ref().child('profileImage/${_image}');
+    UploadTask uploadTask = reference.putFile(imagePath);
+    
+    TaskSnapshot snapshot = await uploadTask;
+    var _imageUrl;
+    _imageUrl = await snapshot.ref.getDownloadURL();
+    if(_imageUrl != null){
+      setState(() {
+       imageUrl = _imageUrl;
+       print("imageUrl: $imageUrl");
+      });
+    }
+  }
+
+
+  Future createUser() async{
+    CollectionReference users = await FirebaseFirestore.instance.collection('users');
+
+    try{
+      users.add({
+          "name": _nameEditingController.text,
+        "email": _emailEditingController.text,
+        "mobile": _mobileEditingController.text,
+        "gender": _gender!.index.toString(),
+        "image": imageUrl.toString()
+      })
+      .then((value) => print("Sucessfully created user"))
+      .catchError((err)=> print("$err"));
+    }catch(err){
+      print("$err");
+    }
+
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -120,6 +167,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: 102,),
                 CustomTextField(
+                  controller: _nameEditingController,
                   hintText: "Name",
                 ),
                 SizedBox(height: 12,),
@@ -136,6 +184,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
                 SizedBox(height: 12,),
                 CustomTextField(
+                  controller: _mobileEditingController,
                   hintText: "Enter Mobile Number",
                 ),
                SizedBox(height: 14,),
