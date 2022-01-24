@@ -1,4 +1,5 @@
 
+import 'package:demo_project/flutter_animation.dart';
 import 'package:demo_project/post_screen.dart';
 import 'package:demo_project/responsive_screen.dart';
 import 'package:demo_project/screen_one.dart';
@@ -51,9 +52,10 @@ void main() {
       ),
 
       themeMode: ThemeMode.light,
-      initialRoute: PostScreen.path,
+      initialRoute: FlutterAnimation.path,
       routes: {
         PostScreen.path : (ctx)=> PostScreen(),
+        FlutterAnimation.path: (ctx)=> FlutterAnimation(),
         ResponsiveScreen.path : (ctx)=> ResponsiveScreen(),
         ScreenOne.path : (ctx)=> ScreenOne(),
         ScreenTwo.path : (ctx)=> ScreenTwo(),
